@@ -38,6 +38,9 @@ namespace SampleWebForm
             {
                 lblBiodata.Text += $"<br/>Anda Wanita";
             }
+
+            string kota = ddKota.SelectedValue;
+            lblBiodata.Text += $"<br/>Kota asal: {kota}";
         }
     }
 }
