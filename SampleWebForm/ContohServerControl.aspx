@@ -25,6 +25,13 @@
                 runat="server" />
             <asp:RadioButton ID="rdFemale" Text="Female" GroupName="groupGender" 
                 runat="server" /><br /><br />
+
+            Kota: <br />
+            <asp:DropDownList ID="ddKota" runat="server">
+                <asp:ListItem Text="Yogyakarta" Selected="True" />
+                <asp:ListItem Text="Surabaya" />
+                <asp:ListItem Text="Jakarta" />
+            </asp:DropDownList><br /><br />
             
             <asp:Button ID="btnSubmit" Text="Submit" runat="server" BackColor="#99CCFF" 
                 OnClick="btnSubmit_Click" />

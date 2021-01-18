@@ -23,20 +23,20 @@ namespace SampleWebForm
             lblBiodata.Text = $"Nama anda: {firsName} {lastName}";
             if (setuju)
             {
-                lblBiodata.Text = $"<br/>Anda setuju";
+                lblBiodata.Text += $"<br/>Anda setuju";
             }
             else
             {
-                lblBiodata.Text = $"<br/>Anda tidak setuju";
+                lblBiodata.Text += $"<br/>Anda tidak setuju";
             }
 
             if (rdMale.Checked)
             {
-                lblBiodata.Text = $"<br/>Anda Pria";
+                lblBiodata.Text += $"<br/>Anda Pria";
             }
             else
             {
-                lblBiodata.Text = $"<br/>Anda Wanita";
+                lblBiodata.Text += $"<br/>Anda Wanita";
             }
         }
     }
