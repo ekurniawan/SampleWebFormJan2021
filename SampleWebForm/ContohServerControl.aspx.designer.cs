@@ -96,6 +96,15 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.RadioButton rdFemale;
 
         /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
         /// ddKota control.
         /// </summary>
         /// <remarks>

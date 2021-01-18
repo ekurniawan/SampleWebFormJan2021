@@ -40,7 +40,7 @@
             <br /><br />
 
             Usia :<br />
-            <asp:TextBox ID="txtUsia" runat="server" />
+            <asp:TextBox ID="txtUsia" runat="server" TextMode="Number" />
             <asp:RangeValidator ErrorMessage="Batasan umur 18-59" 
                 ControlToValidate="txtUsia" MinimumValue="18" 
                 MaximumValue="59" runat="server" Type="Integer" ForeColor="Red" />
@@ -54,6 +54,14 @@
                 runat="server" />
             <asp:RadioButton ID="rdFemale" Text="Female" GroupName="groupGender" 
                 runat="server" /><br /><br />
+
+            Email:<br />
+            <asp:TextBox ID="txtEmail" TextMode="Email" runat="server" />
+            <asp:RegularExpressionValidator runat="server" 
+                ControlToValidate="txtEmail" 
+                ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" 
+                ErrorMessage="Format Email Tidak Sesuai" ForeColor="Red" />
+            <br /><br />
 
             Kota: <br />
             <asp:DropDownList ID="ddKota" runat="server">
