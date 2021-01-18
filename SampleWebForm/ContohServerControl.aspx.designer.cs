@@ -51,22 +51,22 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.CheckBox chkSetuju;
 
         /// <summary>
-        /// chkMale control.
+        /// rdMale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkMale;
+        protected global::System.Web.UI.WebControls.RadioButton rdMale;
 
         /// <summary>
-        /// chkFemale control.
+        /// rdFemale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkFemale;
+        protected global::System.Web.UI.WebControls.RadioButton rdFemale;
 
         /// <summary>
         /// btnSubmit control.

@@ -21,8 +21,10 @@
                 Text="Cek disini jika anda setuju?" runat="server" /><br /><br />
 
             Gender :<br />
-            <asp:RadioButton ID="chkMale" Text="Male" GroupName="groupGender" runat="server" />
-            <asp:RadioButton ID="chkFemale" Text="Female" GroupName="groupGender" runat="server" /><br /><br />
+            <asp:RadioButton ID="rdMale" Text="Male" GroupName="groupGender" 
+                runat="server" />
+            <asp:RadioButton ID="rdFemale" Text="Female" GroupName="groupGender" 
+                runat="server" /><br /><br />
             
             <asp:Button ID="btnSubmit" Text="Submit" runat="server" BackColor="#99CCFF" 
                 OnClick="btnSubmit_Click" />
