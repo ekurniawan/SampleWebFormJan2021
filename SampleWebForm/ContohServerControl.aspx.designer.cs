@@ -60,6 +60,15 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.TextBox txtRepassword;
 
         /// <summary>
+        /// txtUsia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUsia;
+
+        /// <summary>
         /// chkSetuju control.
         /// </summary>
         /// <remarks>

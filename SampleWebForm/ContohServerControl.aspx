@@ -11,6 +11,9 @@
         <div>
             <h2>Halaman Web Saya</h2>
             <br />
+            <asp:ValidationSummary runat="server" 
+                ShowSummary="true" ShowMessageBox="true" ForeColor="Red"  />
+            <hr />
              First Name :<br />
             <asp:TextBox ID="txtFirstName" runat="server" />
             <asp:RequiredFieldValidator runat="server" 
@@ -34,6 +37,13 @@
             <asp:CompareValidator runat="server" ControlToValidate="txtRepassword"
                 ControlToCompare="txtPassword" ForeColor="Red"
                 ErrorMessage="Password dan Repassword harus sama" />
+            <br /><br />
+
+            Usia :<br />
+            <asp:TextBox ID="txtUsia" runat="server" />
+            <asp:RangeValidator ErrorMessage="Batasan umur 18-59" 
+                ControlToValidate="txtUsia" MinimumValue="18" 
+                MaximumValue="59" runat="server" Type="Integer" ForeColor="Red" />
             <br /><br />
 
             <asp:CheckBox ID="chkSetuju" 
