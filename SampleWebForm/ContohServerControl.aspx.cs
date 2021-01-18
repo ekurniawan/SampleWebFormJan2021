@@ -14,6 +14,12 @@ namespace SampleWebForm
 
         }
 
-       
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string firsName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+
+            lblBiodata.Text = $"Nama anda: {firsName} {lastName}";
+        }
     }
 }

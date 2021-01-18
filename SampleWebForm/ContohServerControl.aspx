@@ -11,11 +11,21 @@
         <div>
             <h2>Halaman Web Saya</h2>
             <br />
-            <label for="txtFirstName">First Name :</label><br />
+             First Name :<br />
             <asp:TextBox ID="txtFirstName" runat="server" /><br /><br />
-            <label>Last Name :</label><br />
+
+             Last Name :<br />
             <asp:TextBox ID="txtLastName" runat="server" /><br /><br />
-            <asp:Button ID="btnSubmit" Text="Submit" runat="server" />
+
+            <asp:CheckBox ID="chkSetuju" 
+                Text="Cek disini jika anda setuju?" runat="server" /><br /><br />
+
+            Gender :<br />
+            <asp:RadioButton ID="chkMale" Text="Male" GroupName="groupGender" runat="server" />
+            <asp:RadioButton ID="chkFemale" Text="Female" GroupName="groupGender" runat="server" /><br /><br />
+            
+            <asp:Button ID="btnSubmit" Text="Submit" runat="server" BackColor="#99CCFF" 
+                OnClick="btnSubmit_Click" />
             <hr />
             <asp:Label ID="lblBiodata" runat="server" />
         </div>
