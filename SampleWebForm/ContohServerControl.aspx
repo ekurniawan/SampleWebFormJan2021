@@ -12,10 +12,29 @@
             <h2>Halaman Web Saya</h2>
             <br />
              First Name :<br />
-            <asp:TextBox ID="txtFirstName" runat="server" /><br /><br />
+            <asp:TextBox ID="txtFirstName" runat="server" />
+            <asp:RequiredFieldValidator runat="server" 
+               ControlToValidate="txtFirstName" ForeColor="Red" 
+                ErrorMessage="Data FirstName tidak boleh kosong" />
+            <br /><br />
 
              Last Name :<br />
-            <asp:TextBox ID="txtLastName" runat="server" /><br /><br />
+            <asp:TextBox ID="txtLastName" runat="server" />
+            <asp:RequiredFieldValidator 
+                ErrorMessage="Data LastName tidak boleh kosong" ForeColor="Red"
+                ControlToValidate="txtLastName" runat="server" />
+            <br /><br />
+
+            Password: <br />
+            <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" />
+            <br /><br />
+
+            Repassword: <br />
+            <asp:TextBox runat="server" ID="txtRepassword" TextMode="Password" />
+            <asp:CompareValidator runat="server" ControlToValidate="txtRepassword"
+                ControlToCompare="txtPassword" ForeColor="Red"
+                ErrorMessage="Password dan Repassword harus sama" />
+            <br /><br />
 
             <asp:CheckBox ID="chkSetuju" 
                 Text="Cek disini jika anda setuju?" runat="server" /><br /><br />
