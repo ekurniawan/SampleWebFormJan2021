@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Employee Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeePage.aspx.cs" Inherits="SampleWebForm.EmployeePage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <asp:ObjectDataSource runat="server" ID="odsEmployee" TypeName="SampleWebForm.DAL.EmployeeDAL"
-        SelectMethod="GetAll" />
+        SelectMethod="GetAll" InsertMethod="Insert" />
 
     <div class="row">
         <h2>Setup Employee</h2>
@@ -17,5 +17,26 @@
                 <asp:BoundField DataField="Qualification" HeaderText="Qualification" SortExpression="Qualification" />
             </Columns>
         </asp:GridView>
+        <br />
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="txtEmpName">Employee Name :</label>
+                <asp:TextBox ID="txtEmpName" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="txtDesignation">Designation :</label>
+                <asp:TextBox ID="txtDesignation" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="txtDepartment">Department :</label>
+                <asp:TextBox ID="txtDepartment" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="txtQualification">Qualification :</label>
+                <asp:TextBox ID="txtQualification" runat="server" CssClass="form-control" />
+            </div>
+            <asp:Button ID="btnSubmit" Text="Submit" CssClass="btn btn-primary"
+                runat="server" OnClick="btnSubmit_Click" />
+        </div>
     </div>
 </asp:Content>
