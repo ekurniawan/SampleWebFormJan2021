@@ -24,6 +24,24 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.SqlDataSource sdsEmployee;
 
         /// <summary>
+        /// txtKeyword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKeyword;
+
+        /// <summary>
+        /// btnCari control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCari;
+
+        /// <summary>
         /// gvEmployee control.
         /// </summary>
         /// <remarks>

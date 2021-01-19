@@ -11,7 +11,7 @@ namespace SampleWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -31,5 +31,7 @@ namespace SampleWebForm
                 ltKeterangan.Text = $"<span class='alert alert-danger'>{ex.Message}</span>";
             }
         }
+
+       
     }
 }

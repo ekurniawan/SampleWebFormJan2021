@@ -1,13 +1,20 @@
-﻿<%@ Page Title="Contoh SQL Datasource" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SampleSQLDataSource.aspx.cs" Inherits="SampleWebForm.SampleSQLDataSource" %>
+﻿<%@ Page Title="Contoh SQL Datasource" Language="C#" MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" CodeBehind="SampleSQLDataSource.aspx.cs" Inherits="SampleWebForm.SampleSQLDataSource" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+
     <asp:SqlDataSource ID="sdsEmployee" runat="server"
         ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
-        SelectCommand="SELECT [EmpId], [EmpName], [Designation], [Department], [Qualification] FROM [Employees] ORDER BY [EmpName]"
+        SelectCommand="SELECT [EmpId], [EmpName], [Designation], [Department], [Qualification] FROM [Employees] 
+        ORDER BY [EmpName]"
+        FilterExpression ="EmpName like '%{0}%' OR Designation like '%{0}%' OR Department like '%{0}%' OR Qualification like '%{0}%'"
         DeleteCommand="DELETE FROM [Employees] WHERE [EmpId] = @EmpId"
         InsertCommand="INSERT INTO [Employees] ([EmpName], [Designation], [Department], [Qualification]) VALUES (@EmpName, @Designation, @Department, @Qualification)"
         UpdateCommand="UPDATE [Employees] SET [EmpName] = @EmpName, [Designation] = @Designation, [Department] = @Department, [Qualification] = @Qualification WHERE [EmpId] = @EmpId">
+        <FilterParameters>
+            <asp:ControlParameter Name="EmpName" ControlID="txtKeyword" Type="String" />
+        </FilterParameters>
         <DeleteParameters>
             <asp:Parameter Name="EmpId" Type="Int32" />
         </DeleteParameters>
@@ -28,7 +35,12 @@
 
     <div class="row">
         <h3>Setup Employee</h3>
-        <div class="col-md-8">
+        <div class="col-md-10">
+            Pencarian :
+            <asp:TextBox ID="txtKeyword" runat="server" />
+            <asp:Button ID="btnCari" CssClass="btn btn-primary" Text="Cari" 
+                runat="server"/><br />
+
             <asp:GridView ID="gvEmployee" runat="server"
                 AutoGenerateColumns="False" DataKeyNames="EmpId"
                 DataSourceID="sdsEmployee" CssClass="table table-striped"
@@ -39,10 +51,11 @@
                     <asp:BoundField DataField="Designation" HeaderText="Designation" SortExpression="Designation" />
                     <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
                     <asp:BoundField DataField="Qualification" HeaderText="Qualification" SortExpression="Qualification" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>
             </asp:GridView>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             Employee Name :<br />
             <asp:TextBox ID="txtEmpName" runat="server" /><br /><br />
             Designation :<br />
