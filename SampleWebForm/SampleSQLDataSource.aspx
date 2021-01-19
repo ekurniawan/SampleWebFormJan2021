@@ -4,8 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:SqlDataSource ID="sdsEmployee" runat="server"
         ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
-        SelectCommand="SELECT [EmpId], [EmpName], [Designation], [Department], [Qualification] FROM [Employees] 
-        ORDER BY [EmpName]"
+        SelectCommand="SELECT [EmpId], [EmpName], [Designation], [Department], [Qualification] FROM [Employees] ORDER BY [EmpName]"
         FilterExpression ="EmpName like '%{0}%' OR Designation like '%{0}%' OR Department like '%{0}%' OR Qualification like '%{0}%'"
         DeleteCommand="DELETE FROM [Employees] WHERE [EmpId] = @EmpId"
         InsertCommand="INSERT INTO [Employees] ([EmpName], [Designation], [Department], [Qualification]) VALUES (@EmpName, @Designation, @Department, @Qualification)"
