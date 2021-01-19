@@ -118,6 +118,7 @@
     <Content Include="ContohDesign.aspx" />
     <Content Include="ContohServerControl.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EmployeePage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormBiodata.aspx" />
@@ -2060,6 +2061,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.designer.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormBiodata.aspx.cs">
       <DependentUpon>FormBiodata.aspx</DependentUpon>
