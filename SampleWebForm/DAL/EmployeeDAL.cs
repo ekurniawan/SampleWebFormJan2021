@@ -61,5 +61,32 @@ namespace SampleWebForm.DAL
                 return results;
             }
         }
+
+        public void Insert(string EmpName, string Designation, 
+            string Department, string Qualification)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"insert into Employees(EmpName,Designation,Department,Qualification) 
+                values(@EmpName,@Designation,@Department,@Qualification)";
+                var param = new
+                {
+                    EmpName = EmpName,
+                    Designation = Designation,
+                    Department = Department,
+                    Qualification = Qualification
+                };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Data gagal untuk ditambahkan");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception($"{sqlEx.Message}");
+                }
+            }
+        }
     }
 }
