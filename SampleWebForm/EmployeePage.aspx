@@ -3,7 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <asp:ObjectDataSource runat="server" ID="odsEmployee" TypeName="SampleWebForm.DAL.EmployeeDAL"
-        SelectMethod="GetAll" InsertMethod="Insert" />
+        SelectMethod="GetAll" InsertMethod="Insert">
+        <InsertParameters>
+            <asp:Parameter Name="EmpName" Type="String" />
+            <asp:Parameter Name="Designation" Type="String" />
+            <asp:Parameter Name="Department" Type="String" />
+            <asp:Parameter Name="Qualification" Type="String" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
 
     <div class="row">
         <h2>Setup Employee</h2>
