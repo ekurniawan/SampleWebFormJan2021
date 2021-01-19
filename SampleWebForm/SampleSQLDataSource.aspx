@@ -51,7 +51,10 @@
             <asp:TextBox ID="txtDepartment" runat="server" /><br /><br />
             Qualification :<br />
             <asp:TextBox ID="txtQualification" runat="server" /><br /><br />
-            <asp:Button ID="btnSubmit" Text="Submit" runat="server" CssClass="btn btn-default" />
+            <asp:Button ID="btnSubmit" Text="Submit" runat="server" 
+                CssClass="btn btn-default" OnClick="btnSubmit_Click" />
+            <br /><hr />
+            <asp:Literal ID="ltKeterangan" runat="server" />
         </div>
     </div>
 
