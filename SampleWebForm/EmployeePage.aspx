@@ -15,7 +15,7 @@
     <div class="row">
         <h2>Setup Employee</h2>
         <asp:GridView ID="gvEmployee" runat="server" AutoGenerateColumns="False"
-            DataSourceID="odsEmployee" CssClass="table table-striped" AllowPaging="True">
+            DataSourceID="odsEmployee" CssClass="table table-striped" PageSize="5" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="EmpId" HeaderText="EmpId" SortExpression="EmpId" />
                 <asp:BoundField DataField="EmpName" HeaderText="EmpName" SortExpression="EmpName" />
