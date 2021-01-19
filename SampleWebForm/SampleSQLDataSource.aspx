@@ -2,8 +2,6 @@
     AutoEventWireup="true" CodeBehind="SampleSQLDataSource.aspx.cs" Inherits="SampleWebForm.SampleSQLDataSource" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
     <asp:SqlDataSource ID="sdsEmployee" runat="server"
         ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
         SelectCommand="SELECT [EmpId], [EmpName], [Designation], [Department], [Qualification] FROM [Employees] 
