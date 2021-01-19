@@ -44,6 +44,8 @@
             </div>
             <asp:Button ID="btnSubmit" Text="Submit" CssClass="btn btn-primary"
                 runat="server" OnClick="btnSubmit_Click" />
+            <br />
+            <asp:Literal ID="ltKeterangan" runat="server" />
         </div>
     </div>
 </asp:Content>

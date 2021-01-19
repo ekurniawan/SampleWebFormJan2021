@@ -16,7 +16,21 @@ namespace SampleWebForm
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+            odsEmployee.InsertParameters["EmpName"].DefaultValue = txtEmpName.Text;
+            odsEmployee.InsertParameters["Designation"].DefaultValue = txtDesignation.Text;
+            odsEmployee.InsertParameters["Department"].DefaultValue = txtDepartment.Text;
+            odsEmployee.InsertParameters["Qualification"].DefaultValue = txtQualification.Text;
+
+            try
+            {
+                odsEmployee.Insert();
+                ltKeterangan.Text =
+                    $"";
+            }
+            catch (Exception ex)
+            {
+                ltKeterangan.Text = $"<span class='alert alert-danger'>Error: {ex.Message}</span>";
+            }
         }
     }
 }
