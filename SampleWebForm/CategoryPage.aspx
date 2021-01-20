@@ -44,7 +44,19 @@
                     <asp:BoundField DataField="CategoryID" HeaderText="Category ID" SortExpression="CategoryID" />
                     <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+                    <asp:TemplateField ShowHeader="false">
+                        <ItemTemplate>
+                            <asp:LinkButton Text="Edit" CssClass="btn btn-xs btn-warning"
+                               CommandName="Edit" runat="server" />
+                            <asp:LinkButton Text="Delete" CommandName="Delete" 
+                                OnClientClick="return confirm('Apakah anda yakin untuk delete data?');"
+                                CssClass="btn btn-xs btn-danger" runat="server" />
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                             <asp:LinkButton Text="Update" CssClass="btn btn-xs btn-warning"
+                               CommandName="Update" runat="server" />
+                        </EditItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </div>
