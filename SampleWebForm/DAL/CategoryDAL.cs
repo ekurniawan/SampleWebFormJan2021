@@ -95,7 +95,7 @@ namespace SampleWebForm.DAL
         {
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
-                string strSql = @"delete from Categories where CategoryID=CategoryID";
+                string strSql = @"delete from Categories where CategoryID=@CategoryID";
                 var param = new { CategoryID = CategoryID };
                 try
                 {

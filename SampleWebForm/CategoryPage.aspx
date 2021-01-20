@@ -3,8 +3,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ObjectDataSource ID="odsCategory" TypeName="SampleWebForm.DAL.CategoryDAL" runat="server"
-        SelectMethod="GetAll" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        UpdateMethod="Update">
+        SelectMethod="GetAll" InsertMethod="Insert" 
+        UpdateMethod="Update" DeleteMethod="Delete">
+        <DeleteParameters>
+            <asp:Parameter Name="CategoryID" Type="Int32" />
+        </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="CategoryName" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
@@ -36,12 +39,12 @@
         </div>
         <div class="col-md-9">
             <asp:GridView ID="gvCategory" runat="server" AutoGenerateColumns="False"
-                DataSourceID="odsCategory" CssClass="table table-striped" PageSize="5" AllowPaging="True">
+                DataSourceID="odsCategory" DataKeyNames="CategoryID" CssClass="table table-striped" PageSize="5" AllowPaging="True">
                 <Columns>
                     <asp:BoundField DataField="CategoryID" HeaderText="Category ID" SortExpression="CategoryID" />
                     <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                    <asp:CommandField ShowEditButton="True" />
+                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>
         </div>
