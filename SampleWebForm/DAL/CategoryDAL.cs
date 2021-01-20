@@ -90,5 +90,24 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+        public void Delete(int CategoryID)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"delete from Categories where CategoryID=CategoryID";
+                var param = new { CategoryID = CategoryID };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal mendelete data !");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
+        }
     }
 }
