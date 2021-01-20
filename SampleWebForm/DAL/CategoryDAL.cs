@@ -50,5 +50,25 @@ namespace SampleWebForm.DAL
                 return results;
             }
         }
+
+        public void Insert(string CategoryName,string Description)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"insert into Categories(CategoryName,Description) 
+                                  values(@CategoryName,@Description)";
+                var param = new { CategoryName = CategoryName, Description = Description };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal menambah data Category");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
+        }
     }
 }
