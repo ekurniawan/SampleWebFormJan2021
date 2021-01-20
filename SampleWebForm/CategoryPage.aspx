@@ -3,11 +3,17 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ObjectDataSource ID="odsCategory" TypeName="SampleWebForm.DAL.CategoryDAL" runat="server"
-        SelectMethod="GetAll" InsertMethod="Insert">
+        SelectMethod="GetAll" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        UpdateMethod="Update">
         <InsertParameters>
             <asp:Parameter Name="CategoryName" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
         </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="CategoryID" Type="Int32" />
+            <asp:Parameter Name="CategoryName" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
 
     <div class="row">
@@ -18,14 +24,14 @@
             <div class="form-group">
                 <label for="txtCategoryName">Category Name :</label>
                 <asp:TextBox ID="txtCategoryName" runat="server"  CssClass="form-control" />
-                <asp:RequiredFieldValidator ErrorMessage="Category Name Required" 
+                <asp:RequiredFieldValidator ErrorMessage="Category Name Required" ValidationGroup="valAdd" 
                     ControlToValidate="txtCategoryName" CssClass="text text-danger" runat="server" />
             </div>
             <div class="form-group">
                 <label for="txtDescription">Description :</label>
                 <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" CssClass="form-control" />
             </div>
-            <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="btnAdd_Click" /><br /><br />
+            <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="btnAdd_Click" ValidationGroup="valAdd" /><br /><br />
            
         </div>
         <div class="col-md-9">
@@ -35,6 +41,7 @@
                     <asp:BoundField DataField="CategoryID" HeaderText="Category ID" SortExpression="CategoryID" />
                     <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                    <asp:CommandField ShowEditButton="True" />
                 </Columns>
             </asp:GridView>
         </div>
