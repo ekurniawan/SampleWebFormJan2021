@@ -70,5 +70,25 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+        public void Update(int CategoryID, string CategoryName, string Description)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"update Categories set CategoryName=@CategoryName,Description=@Description 
+                                  where CategoryID=@CategoryID";
+                var param = new { CategoryName = CategoryName, Description = Description, CategoryID = CategoryID };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal mengupdate data");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception($"Error: {sqlEx.Message}");
+                }
+            }
+        }
     }
 }

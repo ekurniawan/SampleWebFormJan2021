@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Setup Category" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoryPage.aspx.cs" Inherits="SampleWebForm.CategoryPage" %>
+﻿<%@ Page Title="Setup Category" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+    CodeBehind="CategoryPage.aspx.cs" Inherits="SampleWebForm.CategoryPage"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ObjectDataSource ID="odsCategory" TypeName="SampleWebForm.DAL.CategoryDAL" runat="server"
@@ -11,10 +12,12 @@
 
     <div class="row">
         <h2>Setup Category</h2><hr />
+         <asp:Literal ID="ltKeterangan" runat="server" />
+        <hr />
         <div class="col-md-3">
             <div class="form-group">
                 <label for="txtCategoryName">Category Name :</label>
-                <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control" />
+                <asp:TextBox ID="txtCategoryName" runat="server"  CssClass="form-control" />
                 <asp:RequiredFieldValidator ErrorMessage="Category Name Required" 
                     ControlToValidate="txtCategoryName" CssClass="text text-danger" runat="server" />
             </div>
@@ -23,7 +26,7 @@
                 <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" CssClass="form-control" />
             </div>
             <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="btnAdd_Click" /><br /><br />
-            <asp:Literal ID="ltKeterangan" runat="server" />
+           
         </div>
         <div class="col-md-9">
             <asp:GridView ID="gvCategory" runat="server" AutoGenerateColumns="False"

@@ -9,9 +9,16 @@ namespace SampleWebForm
 {
     public partial class CategoryPage : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearText()
+        {
+            txtCategoryName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -23,6 +30,7 @@ namespace SampleWebForm
                 odsCategory.Insert();
                 ltKeterangan.Text =
                     $"<span class='alert alert-success'>Category {txtCategoryName.Text} berhasil diambah</span>";
+                ClearText();
             }
             catch (Exception ex)
             {
