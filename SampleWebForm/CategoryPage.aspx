@@ -10,7 +10,7 @@
     </asp:ObjectDataSource>
 
     <div class="row">
-        <h2>Setup Category</h2>
+        <h2>Setup Category</h2><hr />
         <div class="col-md-3">
             <div class="form-group">
                 <label for="txtCategoryName">Category Name :</label>
@@ -22,7 +22,7 @@
                 <label for="txtDescription">Description :</label>
                 <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" CssClass="form-control" />
             </div>
-            <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="btnAdd_Click" /><br />
+            <asp:Button ID="btnAdd" Text="Add" runat="server" OnClick="btnAdd_Click" /><br /><br />
             <asp:Literal ID="ltKeterangan" runat="server" />
         </div>
         <div class="col-md-9">
