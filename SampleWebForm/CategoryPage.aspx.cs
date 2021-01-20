@@ -13,5 +13,22 @@ namespace SampleWebForm
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                odsCategory.InsertParameters["CategoryName"].DefaultValue = txtCategoryName.Text;
+                odsCategory.InsertParameters["Description"].DefaultValue = txtDescription.Text;
+                odsCategory.Insert();
+                ltKeterangan.Text =
+                    $"<span class='alert alert-success'>Category {txtCategoryName.Text} berhasil diambah</span>";
+            }
+            catch (Exception ex)
+            {
+                ltKeterangan.Text =
+                 $"<span class='alert alert-danger'>Error: {ex.Message}</span>";
+            }
+        }
     }
 }
