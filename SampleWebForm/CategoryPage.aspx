@@ -10,10 +10,10 @@
         </div>
         <div class="col-md-9">
             <asp:GridView ID="gvCategory" runat="server" AutoGenerateColumns="False" 
-                DataSourceID="odsCategory" CssClass="table table-striped">
+                DataSourceID="odsCategory" CssClass="table table-striped" PageSize="5" AllowPaging="True">
                 <Columns>
-                    <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
-                    <asp:BoundField DataField="CategoryName" HeaderText="CategoryName" SortExpression="CategoryName" />
+                    <asp:BoundField DataField="CategoryID" HeaderText="Category ID" SortExpression="CategoryID" />
+                    <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                 </Columns>
             </asp:GridView>
