@@ -2,7 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ObjectDataSource ID="odsProduct" TypeName="SampleWebForm.DAL.ProductWithCategoryDAL" runat="server"
-        SelectMethod="GetAll" UpdateMethod="Edit" DeleteMethod="Delete">
+        SelectMethod="GetByName" UpdateMethod="Edit" DeleteMethod="Delete">
+        <SelectParameters>
+            <asp:Parameter Name="ProductName" Type="String" />
+        </SelectParameters>
         <DeleteParameters>
             <asp:Parameter Name="ProductID" Type="Int32" />
         </DeleteParameters>
@@ -33,6 +36,10 @@
                 <asp:Literal ID="ltKeterangan" runat="server" />
                 <br />
                 <div class="col-md-8">
+                    Pencarian :
+                    <asp:TextBox ID="txtSearch" runat="server" /> 
+                    <asp:Button ID="btnSearch" Text="Search" CssClass="btn  btn-sm btn-success" runat="server" OnClick="txtSearch_Click" />
+                    <br />
                     <asp:GridView ID="gvProduct" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID"
                         DataSourceID="odsProduct" CssClass="table table-striped" AllowPaging="True" PageSize="5">
                         <Columns>

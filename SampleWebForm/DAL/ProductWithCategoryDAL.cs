@@ -16,12 +16,33 @@ namespace SampleWebForm.DAL
             return WebConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
         }
 
-        public IEnumerable<ViewProductWithCategory> GetAll()
+        /*public IEnumerable<ViewProductWithCategory> GetAll(string keyword,string namafield)
         {
+            string strSql = @"select * from ViewProductWithCategory ";
+            var lstField = namafield.Split(new char[] { ',' });
+
+            if (op == "OR")
+            {
+                strSql += @"";
+            }
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
                 string strSql = @"select * from ViewProductWithCategory order by ProductName asc";
                 var results = conn.Query<ViewProductWithCategory>(strSql);
+                return results;
+            }
+        }*/
+
+
+
+        public IEnumerable<ViewProductWithCategory> GetByName(string ProductName)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"select * from ViewProductWithCategory where ProductName like @ProductName
+                                  order by ProductName asc";
+                var param = new { ProductName = '%' + ProductName + '%' };
+                var results = conn.Query<ViewProductWithCategory>(strSql, param);
                 return results;
             }
         }
