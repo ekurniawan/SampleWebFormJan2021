@@ -1893,6 +1893,7 @@
     <Content Include="Startbootstrap\vendor\jquery\jquery.min.js" />
     <Content Include="Startbootstrap\vendor\jquery\jquery.slim.js" />
     <Content Include="Startbootstrap\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="TambahProduct.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -2117,6 +2118,7 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\ProductWithCategoryDAL.cs" />
+    <Compile Include="DAL\SupplierDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2189,6 +2191,13 @@
     </Compile>
     <Compile Include="Startbootstrap.Master.designer.cs">
       <DependentUpon>Startbootstrap.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TambahProduct.aspx.cs">
+      <DependentUpon>TambahProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TambahProduct.aspx.designer.cs">
+      <DependentUpon>TambahProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
