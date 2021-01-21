@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label for="txtReorderLevel">Reorder Level :</label>
                 <asp:TextBox ID="txtReorderLevel" runat="server" TextMode="Number" CssClass="form-control" />
-            </div>
+            </div><br />
             <div class="form-group">
                 <label for="chkDiscontinued">Reorder Level :</label>
                 <asp:CheckBox ID="chkDiscontinued" Text="Discontinued" runat="server" />

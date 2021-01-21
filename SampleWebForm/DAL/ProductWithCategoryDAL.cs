@@ -47,5 +47,42 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+        public void Edit(string ProductName, int SupplierID, int CategoryID, string QuantityPerUnit,
+            decimal? UnitPrice, short? UnitsInStock, short? UnitsOnOrder, short? ReorderLevel, bool Discontinued, int ProductID)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"update Products set ProductName=@ProductName,SupplierID=@SupplierID,
+                CategoryID=@CategoryID,QuantityPerUnit=@QuantityPerUnit,UnitPrice=@UnitPrice,UnitsInStock=@UnitsInStock,
+                UnitsOnOrder=@UnitsOnOrder,ReorderLevel=@ReorderLevel,Discontinued=@Discontinued 
+                where ProductID=@ProductID";
+
+                var param = new
+                {
+                    ProductName = ProductName,
+                    SupplierID = SupplierID,
+                    CategoryID = CategoryID,
+                    QuantityPerUnit = QuantityPerUnit,
+                    UnitPrice = UnitPrice,
+                    UnitsInStock = UnitsInStock,
+                    UnitsOnOrder = UnitsOnOrder,
+                    ReorderLevel = ReorderLevel,
+                    Discontinued = Discontinued,
+                    ProductID = ProductID
+                };
+
+                try
+                {
+                    var result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Data Product Gagal Diupdate !");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
+        }
     }
 }
