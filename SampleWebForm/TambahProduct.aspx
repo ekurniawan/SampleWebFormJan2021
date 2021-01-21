@@ -2,24 +2,39 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:ObjectDataSource ID="odsProduct" runat="server" />
+    <asp:ObjectDataSource ID="odsProduct" TypeName="SampleWebForm.DAL.ProductWithCategoryDAL" InsertMethod="Insert" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAll">
+        <InsertParameters>
+            <asp:Parameter Name="ProductName" Type="String" />
+            <asp:Parameter Name="SupplierID" Type="Int32" />
+            <asp:Parameter Name="CategoryID" Type="Int32" />
+            <asp:Parameter Name="QuantityPerUnit" Type="String" />
+            <asp:Parameter Name="UnitPrice" Type="Decimal" />
+            <asp:Parameter Name="UnitsInStock" Type="Int16" />
+            <asp:Parameter Name="UnitsOnOrder" Type="Int16" />
+            <asp:Parameter Name="ReorderLevel" Type="Int16" />
+            <asp:Parameter Name="Discontinued" Type="Boolean" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="odsSupplier" TypeName="SampleWebForm.DAL.SupplierDAL" SelectMethod="GetAll" runat="server" />
     <asp:ObjectDataSource ID="odsCategory" TypeName="SampleWebForm.DAL.CategoryDAL" SelectMethod="GetAll" runat="server" />
 
     <h3>Form Tambah Product</h3>
+    <br />
+    <asp:HyperLink NavigateUrl="~/ProductPage" CssClass="btn btn-xs btn-success" Text="List Of Product" runat="server" /><br />
     <div class="row">
+        <asp:Literal ID="ltKeterangan" runat="server" />
         <div class="col-md-6">
             <div class="form-group">
                 <label for="txtProductName">Product Name :</label>
                 <asp:TextBox ID="txtProductName" runat="server" CssClass="form-control" />
             </div>
             <div class="form-group">
-                <label for="txtSupplier">Supplier Name :</label>
-                <asp:DropDownList ID="ddProduct" DataValueField="SupplierID"  
+                <label for="ddSupplier">Supplier Name :</label>
+                <asp:DropDownList ID="ddSupplier" DataValueField="SupplierID"
                     DataTextField="CompanyName" runat="server" CssClass="form-control" DataSourceID="odsSupplier" />
             </div>
             <div class="form-group">
-                <label for="txtCategory">Category Name :</label>
+                <label for="ddCategory">Category Name :</label>
                 <asp:DropDownList ID="ddCategory" runat="server" CssClass="form-control" DataSourceID="odsCategory" DataTextField="CategoryName" DataValueField="CategoryID" />
             </div>
             <div class="form-group">
@@ -46,7 +61,7 @@
                 <label for="chkDiscontinued">Reorder Level :</label>
                 <asp:CheckBox ID="chkDiscontinued" Text="Discontinued" runat="server" />
             </div>
-            <asp:Button ID="btnSubmit" Text="Submit" CssClass="btn btn-primary" runat="server" />
+            <asp:Button ID="btnSubmit" Text="Submit" CssClass="btn btn-primary" runat="server" OnClick="btnSubmit_Click" /><br />
         </div>
     </div>
 </asp:Content>
