@@ -15,6 +15,33 @@ namespace SampleWebForm
     {
 
         /// <summary>
+        /// odsProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsProduct;
+
+        /// <summary>
+        /// odsSupplier control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsSupplier;
+
+        /// <summary>
+        /// odsCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsCategory;
+
+        /// <summary>
         /// txtProductName control.
         /// </summary>
         /// <remarks>

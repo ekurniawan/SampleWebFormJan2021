@@ -20,7 +20,7 @@ namespace SampleWebForm.DAL
         {
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
-                string strSql = @"select * from Suppliers order by CategoryName asc";
+                string strSql = @"select * from Suppliers order by CompanyName asc";
                 var results = conn.Query<Supplier>(strSql);
                 return results;
             }

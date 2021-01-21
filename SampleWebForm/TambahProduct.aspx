@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Form Tambah Product" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TambahProduct.aspx.cs" Inherits="SampleWebForm.TambahProduct" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <asp:ObjectDataSource ID="odsProduct" runat="server" />
+    <asp:ObjectDataSource ID="odsSupplier" TypeName="SampleWebForm.DAL.SupplierDAL" SelectMethod="GetAll" runat="server" />
+    <asp:ObjectDataSource ID="odsCategory" TypeName="SampleWebForm.DAL.CategoryDAL" SelectMethod="GetAll" runat="server" />
+
     <h3>Form Tambah Product</h3>
     <div class="row">
         <div class="col-md-6">
@@ -10,11 +15,12 @@
             </div>
             <div class="form-group">
                 <label for="txtSupplier">Supplier Name :</label>
-                <asp:DropDownList ID="ddProduct" runat="server" CssClass="form-control" />
+                <asp:DropDownList ID="ddProduct" DataValueField="SupplierID"  
+                    DataTextField="CompanyName" runat="server" CssClass="form-control" DataSourceID="odsSupplier" />
             </div>
             <div class="form-group">
                 <label for="txtCategory">Category Name :</label>
-                <asp:DropDownList ID="ddCategory" runat="server" CssClass="form-control" />
+                <asp:DropDownList ID="ddCategory" runat="server" CssClass="form-control" DataSourceID="odsCategory" DataTextField="CategoryName" DataValueField="CategoryID" />
             </div>
             <div class="form-group">
                 <label for="txtQuantityPerUnit">Quantity Per Unit :</label>
