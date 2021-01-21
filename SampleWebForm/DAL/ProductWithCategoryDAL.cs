@@ -84,5 +84,24 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+        public void Delete(int ProductID)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"delete from Products where ProductID=@ProductID";
+                var param = new { ProductID = ProductID };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal mendelete product");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
+        }
     }
 }

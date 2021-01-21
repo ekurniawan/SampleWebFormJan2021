@@ -2,7 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ObjectDataSource ID="odsProduct" TypeName="SampleWebForm.DAL.ProductWithCategoryDAL" runat="server"
-        SelectMethod="GetAll" OldValuesParameterFormatString="original_{0}" UpdateMethod="Edit">
+        SelectMethod="GetAll" UpdateMethod="Edit" DeleteMethod="Delete">
+        <DeleteParameters>
+            <asp:Parameter Name="ProductID" Type="Int32" />
+        </DeleteParameters>
         <UpdateParameters>
             <asp:Parameter Name="ProductName" Type="String" />
             <asp:Parameter Name="SupplierID" Type="Int32" />
@@ -30,7 +33,7 @@
                 <asp:Literal ID="ltKeterangan" runat="server" />
                 <br />
                 <div class="col-md-8">
-                    <asp:GridView ID="gvProduct" runat="server" AutoGenerateColumns="False"
+                    <asp:GridView ID="gvProduct" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID"
                         DataSourceID="odsProduct" CssClass="table table-striped" AllowPaging="True" PageSize="5">
                         <Columns>
                             <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
@@ -73,7 +76,7 @@
                             <asp:CheckBoxField DataField="Discontinued" HeaderText="Discontinued" SortExpression="Discontinued">
                                 <ItemStyle HorizontalAlign="Center" />
                             </asp:CheckBoxField>
-                            <asp:CommandField ShowEditButton="True" />
+                            <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                         </Columns>
                     </asp:GridView>
                 </div>
