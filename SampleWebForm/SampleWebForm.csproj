@@ -2119,6 +2119,7 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\ProductWithCategoryDAL.cs" />
+    <Compile Include="DAL\RegistrasiDAL.cs" />
     <Compile Include="DAL\SupplierDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -2147,7 +2148,9 @@
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Pengguna.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Registrasi.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ViewProductWithCategory.cs" />
     <Compile Include="ProductPage.aspx.cs">
