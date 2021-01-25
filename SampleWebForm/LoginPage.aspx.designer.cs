@@ -11,7 +11,7 @@ namespace SampleWebForm
 {
 
 
-    public partial class Registrasi
+    public partial class LoginPage
     {
 
         /// <summary>
@@ -33,31 +33,13 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// txtRepassword control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRepassword;
-
-        /// <summary>
-        /// txtAturan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAturan;
-
-        /// <summary>
-        /// btnRegistrasi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrasi;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
         /// ltKeterangan control.

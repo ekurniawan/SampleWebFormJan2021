@@ -17,7 +17,11 @@
             <asp:CompareValidator ErrorMessage="Password dan Repassword harus sama" 
                 ControlToValidate="txtRepassword" ControlToCompare="txtPassword" ForeColor="Red" runat="server" />
         </div>
-        <asp:Button ID="btnRegistrasi" Text="Registrasi" runat="server" />
+        <div class="form-group">
+            <label for="txtAturan">Aturan :</label>
+            <asp:TextBox ID="txtAturan" runat="server" CssClass="form-control" />
+        </div>
+        <asp:Button ID="btnRegistrasi" Text="Registrasi" CssClass="btn btn-success" runat="server" OnClick="btnRegistrasi_Click" />
         <br />
         <asp:Literal ID="ltKeterangan" runat="server" />
     </div>
