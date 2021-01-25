@@ -166,6 +166,7 @@
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="ProductPage.aspx" />
+    <Content Include="Registrasi.aspx" />
     <Content Include="SampleReport.aspx" />
     <Content Include="SampleSQLDataSource.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2157,6 +2158,13 @@
       <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrasi.aspx.cs">
+      <DependentUpon>Registrasi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrasi.aspx.designer.cs">
+      <DependentUpon>Registrasi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SampleReport.aspx.cs">
       <DependentUpon>SampleReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
