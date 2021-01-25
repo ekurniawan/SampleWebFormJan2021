@@ -14,6 +14,8 @@
         <div class="form-group">
             <label for="txtRepassword">Repassword :</label>
             <asp:TextBox ID="txtRepassword" TextMode="Password" runat="server" CssClass="form-control" />
+            <asp:CompareValidator ErrorMessage="Password dan Repassword harus sama" 
+                ControlToValidate="txtRepassword" ControlToCompare="txtPassword" ForeColor="Red" runat="server" />
         </div>
         <asp:Button ID="btnRegistrasi" Text="Registrasi" runat="server" />
         <br />

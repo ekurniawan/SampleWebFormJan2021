@@ -1,8 +1,11 @@
-﻿using System;
+﻿using SampleWebForm.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
+using Dapper;
 
 namespace SampleWebForm.DAL
 {
@@ -13,13 +16,23 @@ namespace SampleWebForm.DAL
             return WebConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
         }
 
-        public IEnumerable<Category> GetAll()
+        public void RegistrasiPengguna(Pengguna pengguna)
         {
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
-                string strSql = @"select CategoryID,CategoryName,Description from Categories order by CategoryName asc";
-                var results = conn.Query<Category>(strSql);
-                return results;
+                string strSql = @"insert into Pengguna(Username,Password,Aturan) values(@Username,@Password,@Aturan)";
+                var hashPasword = Helper.Helper.GetMd5Hash(pengguna.Password);
+                var param = new { Username = pengguna.Username, Password = hashPasword, Aturan = pengguna.Aturan };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal melakukan registrasi");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
             }
         }
     }
