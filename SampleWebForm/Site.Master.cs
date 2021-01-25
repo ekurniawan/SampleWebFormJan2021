@@ -11,7 +11,18 @@ namespace SampleWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["username"] != null)
+            {
+                lnkLogin.Text = "Logout";
+                ltPengguna.Text = $"<li><a href='#'>Welcome, {Session["Username"].ToString()}</a></li>";
+            }
+            else
+            {
+                lnkLogin.Text = "Sign In";
+                lnkLogin.PostBackUrl = "~/LoginPage";
+            }
         }
+
+      
     }
 }

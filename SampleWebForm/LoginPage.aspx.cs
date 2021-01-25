@@ -28,6 +28,7 @@ namespace SampleWebForm
             if (result != null)
             {
                 Session["username"] = result.Username;
+                Session["aturan"] = result.Aturan; 
                 Response.Redirect("~/Default");
             }
             else
