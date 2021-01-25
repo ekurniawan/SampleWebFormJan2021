@@ -12,13 +12,37 @@ namespace SampleWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString();
         }
         protected void txtSearch_Click(object sender, EventArgs e)
         {
-            odsProduct.SelectParameters["ProductName"].DefaultValue = txtSearch.Text;
+            string pilihan = string.Empty;
+            foreach(ListItem item in chkPilihan.Items)
+            {
+                pilihan += item.Value + ",";
+            }
+            pilihan = pilihan.Substring(0, pilihan.Length - 1);
+            
+            string myOperator = ddOperator.SelectedValue;
+
+            odsProduct.SelectParameters["Keyword"].DefaultValue = txtSearch.Text;
+            odsProduct.SelectParameters["Pilihan"].DefaultValue = pilihan;
+            odsProduct.SelectParameters["Operator"].DefaultValue = myOperator;
             odsProduct.Select();
             odsProduct.DataBind();
+
+
+            //odsProduct.SelectParameters["Keyword"].DefaultValue = txtSearch.Text;
+            //if (rdNamaProduct.Checked)
+            //{
+            //    odsProduct.SelectParameters["Pilihan"].DefaultValue = "ProductName";
+            //}
+            //else
+            //{
+            //    odsProduct.SelectParameters["Pilihan"].DefaultValue = "CategoryName";
+            //}
+
+            //odsProduct.Select();
+            //odsProduct.DataBind();
         }
     }
 }

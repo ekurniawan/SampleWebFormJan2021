@@ -42,15 +42,6 @@ namespace SampleWebForm
         protected global::System.Web.UI.WebControls.ObjectDataSource odsCategory;
 
         /// <summary>
-        /// lblDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
-
-        /// <summary>
         /// ltKeterangan control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,24 @@ namespace SampleWebForm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltKeterangan;
+
+        /// <summary>
+        /// chkPilihan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chkPilihan;
+
+        /// <summary>
+        /// ddOperator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddOperator;
 
         /// <summary>
         /// txtSearch control.

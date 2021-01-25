@@ -34,17 +34,60 @@ namespace SampleWebForm.DAL
         }*/
 
 
-
-        public IEnumerable<ViewProductWithCategory> GetByName(string ProductName)
+        public IEnumerable<ViewProductWithCategory> GetByKeyword(string Keyword,string Pilihan,string Operator)
         {
+            string strSql = string.Empty;
+            string[] pilihan;
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
-                string strSql = @"select * from ViewProductWithCategory where ProductName like @ProductName
-                                  order by ProductName asc";
-                var param = new { ProductName = '%' + ProductName + '%' };
-                var results = conn.Query<ViewProductWithCategory>(strSql, param);
+                strSql = "select * from ViewProductWithCategory where ";
+                if (Operator == "AND")
+                {
+                    pilihan = Pilihan.Split(',');
+                    foreach(var pilih in pilihan)
+                    {
+                        strSql += $"{pilih} like '%{Keyword}%' ";
+                        strSql += "AND ";
+                    }
+                    strSql = strSql.Substring(0, strSql.Length - 4);
+                }
+                else
+                {
+                    pilihan = Pilihan.Split(',');
+                    foreach (var pilih in pilihan)
+                    {
+                        strSql += $"{pilih} like '%{Keyword}%' ";
+                        strSql += "OR ";
+                    }
+                    strSql = strSql.Substring(0, strSql.Length - 3);
+                }
+                strSql += " order by ProductName asc";
+                
+                var results = conn.Query<ViewProductWithCategory>(strSql);
                 return results;
             }
+
+            /*string strSql = string.Empty;
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                ViewProductWithCategory param = null;
+                if (Pilihan == "ProductName")
+                {
+                    strSql = @"select * from ViewProductWithCategory where ProductName like @ProductName
+                                  order by ProductName asc";
+                    param = new ViewProductWithCategory { ProductName = '%' + Keyword + '%' };
+                    
+                }
+                else
+                {
+                    strSql = @"select * from ViewProductWithCategory where CategoryName like @CategoryName
+                                  order by ProductName asc";
+                    param = new ViewProductWithCategory { CategoryName = '%' + Keyword + '%' };
+                }
+                
+                var results = conn.Query<ViewProductWithCategory>(strSql, param);
+                return results;
+            }*/
         }
 
         public void Insert(string ProductName, int SupplierID, int CategoryID, string QuantityPerUnit,
