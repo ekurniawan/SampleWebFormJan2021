@@ -10,6 +10,6 @@
         <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="form-control" />
     </div>
     <asp:Button ID="btnLogin" Text="Login" CssClass="btn btn-success" runat="server"  />
-    <br />
+    <br /><br />
     <asp:Literal ID="ltKeterangan" runat="server" />
 </asp:Content>

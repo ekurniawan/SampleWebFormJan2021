@@ -35,5 +35,16 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+        public Pengguna LoginPengguna(Pengguna pengguna)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"select * from Pengguna where Username=@Username and Password=@Password";
+                var passHash = Helper.Helper.GetMd5Hash(pengguna.Password);
+                var param = new { Username = pengguna.Username, Password = passHash };
+                return conn.QuerySingleOrDefault<Pengguna>(strSql, param);
+            }
+        }
     }
 }
