@@ -12,7 +12,17 @@ namespace SampleWebForm
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["username"] == null)
+            {
+                Response.Redirect("~/LoginPage");
+            }
+            else
+            {
+                if (Session["aturan"].ToString() != "Admin")
+                {
+                    Response.Redirect("~/LoginPage");
+                }
+            }
         }
 
         private void ClearText()
