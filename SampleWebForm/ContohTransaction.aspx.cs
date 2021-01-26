@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Transactions;
 
 namespace SampleWebForm
 {
@@ -22,28 +23,41 @@ namespace SampleWebForm
             EmployeeDAL employeeDAL = new EmployeeDAL();
             RegistrasiDAL registrasiDAL = new RegistrasiDAL();
 
-            try
+            
+            using(var transactionScope = new TransactionScope())
             {
-                //proses 1 - insert category
-                categoryDAL.Insert("Test Insert Category 1", "Test Insert Category 1");
-                
-                //proses 2 - insert pengguna
-                var newPengguna = new Pengguna
+                try
                 {
-                    Username="joko",
-                    Password = "rahasia",
-                    Aturan = "mahasiswa"
-                };
-                registrasiDAL.RegistrasiPengguna(newPengguna);
+                    //proses 1 - insert category
+                    categoryDAL.Insert("Test 4", "Test Insert Category 4");
 
-                //proses 3 - menambahkan employee
-                employeeDAL.Insert("Budi","")
-            }
-            catch (Exception ex)
-            {
+                    //proses 2 - insert pengguna
+                    var newPengguna = new Pengguna
+                    {
+                        Username = "joko",
+                        Password = "rahasia",
+                        Aturan = "mahasiswa"
+                    };
+                    registrasiDAL.RegistrasiPengguna(newPengguna);
 
-                throw;
+                    //proses 3 - menambahkan employee
+                    var newEmployee = new MyEmployee
+                    {
+                        FirstName = "Jojo",
+                        LastName = "Jojo"
+                    };
+                    employeeDAL.InsertMyEmployee(newEmployee);
+
+                    transactionScope.Complete();
+
+                    ltKeterangan.Text = $"<span class='alert alert-success'>Proses berhasil dijalankan</span>";
+                }
+                catch (Exception ex)
+                {
+                    ltKeterangan.Text = $"<span class='alert alert-danger'>{ex.Message}</span>";
+                }
             }
+          
         }
     }
 }
