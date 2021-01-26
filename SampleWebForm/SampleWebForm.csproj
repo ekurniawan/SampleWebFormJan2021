@@ -166,11 +166,34 @@
     <Content Include="backenddbDataSet.xss">
       <DependentUpon>backenddbDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="ProductDataSet.xsc">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ProductDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ProductDataSet.xss">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="ProductWithCategoryDataSet.xsc">
+      <DependentUpon>ProductWithCategoryDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ProductWithCategoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductWithCategoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ProductWithCategoryDataSet.xss">
+      <DependentUpon>ProductWithCategoryDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="LoginPage.aspx" />
     <Content Include="LogoutPage.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Registrasi.aspx" />
+    <Content Include="ReportProducts.aspx" />
     <Content Include="SampleReport.aspx" />
     <Content Include="SampleSQLDataSource.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2179,12 +2202,22 @@
     <Compile Include="Models\Registrasi.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ViewProductWithCategory.cs" />
+    <Compile Include="ProductDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProductPage.aspx.designer.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductWithCategoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductWithCategoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrasi.aspx.cs">
@@ -2193,6 +2226,13 @@
     </Compile>
     <Compile Include="Registrasi.aspx.designer.cs">
       <DependentUpon>Registrasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportProducts.aspx.cs">
+      <DependentUpon>ReportProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportProducts.aspx.designer.cs">
+      <DependentUpon>ReportProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleReport.aspx.cs">
       <DependentUpon>SampleReport.aspx</DependentUpon>
@@ -2261,6 +2301,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\CategoryReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportProduct.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

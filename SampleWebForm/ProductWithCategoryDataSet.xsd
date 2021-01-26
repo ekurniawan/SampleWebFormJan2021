@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductWithCategoryDataSet" targetNamespace="http://tempuri.org/ProductWithCategoryDataSet.xsd" xmlns:mstns="http://tempuri.org/ProductWithCategoryDataSet.xsd" xmlns="http://tempuri.org/ProductWithCategoryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="MyConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MyConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.MyConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewProductWithCategoryTableAdapter" GeneratorDataComponentClassName="ViewProductWithCategoryTableAdapter" Name="ViewProductWithCategory" UserDataComponentName="ViewProductWithCategoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MyConnectionString (Web.config)" DbObjectName="backenddb.dbo.ViewProductWithCategory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued, CategoryName, CompanyName FROM dbo.ViewProductWithCategory</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProductID" DataSetColumn="ProductID" />
+              <Mapping SourceColumn="ProductName" DataSetColumn="ProductName" />
+              <Mapping SourceColumn="SupplierID" DataSetColumn="SupplierID" />
+              <Mapping SourceColumn="CategoryID" DataSetColumn="CategoryID" />
+              <Mapping SourceColumn="QuantityPerUnit" DataSetColumn="QuantityPerUnit" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="UnitsInStock" DataSetColumn="UnitsInStock" />
+              <Mapping SourceColumn="UnitsOnOrder" DataSetColumn="UnitsOnOrder" />
+              <Mapping SourceColumn="ReorderLevel" DataSetColumn="ReorderLevel" />
+              <Mapping SourceColumn="Discontinued" DataSetColumn="Discontinued" />
+              <Mapping SourceColumn="CategoryName" DataSetColumn="CategoryName" />
+              <Mapping SourceColumn="CompanyName" DataSetColumn="CompanyName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProductWithCategoryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProductWithCategoryDataSet" msprop:Generator_UserDSName="ProductWithCategoryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewProductWithCategory" msprop:Generator_TableClassName="ViewProductWithCategoryDataTable" msprop:Generator_TableVarName="tableViewProductWithCategory" msprop:Generator_TablePropName="ViewProductWithCategory" msprop:Generator_RowDeletingName="ViewProductWithCategoryRowDeleting" msprop:Generator_RowChangingName="ViewProductWithCategoryRowChanging" msprop:Generator_RowEvHandlerName="ViewProductWithCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewProductWithCategoryRowDeleted" msprop:Generator_UserTableName="ViewProductWithCategory" msprop:Generator_RowChangedName="ViewProductWithCategoryRowChanged" msprop:Generator_RowEvArgName="ViewProductWithCategoryRowChangeEvent" msprop:Generator_RowClassName="ViewProductWithCategoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:int" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierID" msprop:Generator_ColumnVarNameInTable="columnSupplierID" msprop:Generator_ColumnPropNameInRow="SupplierID" msprop:Generator_ColumnPropNameInTable="SupplierIDColumn" msprop:Generator_UserColumnName="SupplierID" type="xs:int" minOccurs="0" />
+              <xs:element name="CategoryID" msprop:Generator_ColumnVarNameInTable="columnCategoryID" msprop:Generator_ColumnPropNameInRow="CategoryID" msprop:Generator_ColumnPropNameInTable="CategoryIDColumn" msprop:Generator_UserColumnName="CategoryID" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantityPerUnit" msprop:Generator_ColumnVarNameInTable="columnQuantityPerUnit" msprop:Generator_ColumnPropNameInRow="QuantityPerUnit" msprop:Generator_ColumnPropNameInTable="QuantityPerUnitColumn" msprop:Generator_UserColumnName="QuantityPerUnit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UnitsInStock" msprop:Generator_ColumnVarNameInTable="columnUnitsInStock" msprop:Generator_ColumnPropNameInRow="UnitsInStock" msprop:Generator_ColumnPropNameInTable="UnitsInStockColumn" msprop:Generator_UserColumnName="UnitsInStock" type="xs:short" minOccurs="0" />
+              <xs:element name="UnitsOnOrder" msprop:Generator_ColumnVarNameInTable="columnUnitsOnOrder" msprop:Generator_ColumnPropNameInRow="UnitsOnOrder" msprop:Generator_ColumnPropNameInTable="UnitsOnOrderColumn" msprop:Generator_UserColumnName="UnitsOnOrder" type="xs:short" minOccurs="0" />
+              <xs:element name="ReorderLevel" msprop:Generator_ColumnVarNameInTable="columnReorderLevel" msprop:Generator_ColumnPropNameInRow="ReorderLevel" msprop:Generator_ColumnPropNameInTable="ReorderLevelColumn" msprop:Generator_UserColumnName="ReorderLevel" type="xs:short" minOccurs="0" />
+              <xs:element name="Discontinued" msprop:Generator_ColumnVarNameInTable="columnDiscontinued" msprop:Generator_ColumnPropNameInRow="Discontinued" msprop:Generator_ColumnPropNameInTable="DiscontinuedColumn" msprop:Generator_UserColumnName="Discontinued" type="xs:boolean" />
+              <xs:element name="CategoryName" msprop:Generator_ColumnVarNameInTable="columnCategoryName" msprop:Generator_ColumnPropNameInRow="CategoryName" msprop:Generator_ColumnPropNameInTable="CategoryNameColumn" msprop:Generator_UserColumnName="CategoryName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyName" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_UserColumnName="CompanyName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ViewProductWithCategory" />
+      <xs:field xpath="mstns:ProductID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
