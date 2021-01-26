@@ -9,9 +9,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="row">
             <asp:ScriptManager runat="server"></asp:ScriptManager>
-            <rsweb:ReportViewer ID="rvLaporan" runat="server">
+            <rsweb:ReportViewer ID="rvLaporan" Width="100%" Height="600px" runat="server">
             </rsweb:ReportViewer>
         </div>
     </form>

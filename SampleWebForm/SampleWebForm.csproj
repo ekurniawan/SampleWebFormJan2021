@@ -139,6 +139,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="ContohDesign.aspx" />
     <Content Include="ContohServerControl.aspx" />
+    <Content Include="ContohTransaction.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EmployeePage.aspx" />
     <Content Include="favicon.ico" />
@@ -2118,6 +2119,13 @@
     <Compile Include="ContohServerControl.aspx.designer.cs">
       <DependentUpon>ContohServerControl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContohTransaction.aspx.cs">
+      <DependentUpon>ContohTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContohTransaction.aspx.designer.cs">
+      <DependentUpon>ContohTransaction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\ProductWithCategoryDAL.cs" />
@@ -2164,6 +2172,7 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\MyEmployee.cs" />
     <Compile Include="Models\Pengguna.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Registrasi.cs" />

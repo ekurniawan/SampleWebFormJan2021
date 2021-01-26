@@ -88,5 +88,25 @@ namespace SampleWebForm.DAL
                 }
             }
         }
+
+
+        public void InsertMyEmployee(MyEmployee employee)
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"insert into Employees(LastName,FirstName) values(@LastName,@FirstName)";
+                var param = new { LastName = employee.LastName, FirstName = employee.FirstName };
+                try
+                {
+                    int result = conn.Execute(strSql, param);
+                    if (result != 1)
+                        throw new Exception("Gagal menambahkan data Employee");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
+        }
     }
 }
